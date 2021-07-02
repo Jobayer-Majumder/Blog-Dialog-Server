@@ -14,7 +14,7 @@ const port = 5000;
 app.use(cors())
 app.use(express.json());
 
-const uri = "mongodb+srv://blogDialog:wu9XRPXsUqHe7JHc@jobayer.eggfq.mongodb.net/blogDialog?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USER_NAME}:${process.env.DB_PASS}@jobayer.eggfq.mongodb.net/${process.env.DB_USER_NAME}?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
