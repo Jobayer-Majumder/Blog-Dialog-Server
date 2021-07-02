@@ -3,6 +3,8 @@ const app = express()
 const cors = require('cors');
 const { MongoClient } = require('mongodb');
 const ObjectID = require('mongodb').ObjectId;
+require('.env').config()
+
 
 
 const port = 5000;
@@ -84,4 +86,4 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(port, () => console.log(`server is running on ${port} port`))
+app.listen(port || process.env.PORT, () => console.log(`server is running on ${port} port`))
